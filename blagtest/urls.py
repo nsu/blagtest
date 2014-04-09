@@ -15,5 +15,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'core.views.list_strings'),
-    url(r'^calc/(?P<num1>\d*)/(?P<num2>\d*)/$', 'core.views.add_nums'),
+    url(r'^calc/add/(?P<num1>\d*)/(?P<num2>\d*)/$', 'core.views.add_nums'),
+    url(r'^calc/mult/(?P<num1>\d*)/(?P<num2>\d*)/$', 'core.views.mult_nums'),
 )

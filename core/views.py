@@ -7,4 +7,9 @@ def list_strings(request):
     return render(request, 'list_strings.html', {'all_strs':all_strs, 'foo':'other content'})
 
 def add_nums(request, num1, num2):
-    pass
+	result=int(num1)+int(num2)
+	return render(request, 'foobar.html', {'result':result})
+
+def mult_nums(request, num1, num2):
+	result=int(num1)*int(num2)
+	return render(request, 'yet_another_template.html', {'mult_result':result})
