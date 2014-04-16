@@ -5,3 +5,6 @@ from django.shortcuts import render
 def list_strings(request):
     all_strs = StringStore.objects.all()
     return render(request, 'list_strings.html', {'all_strs':all_strs, 'foo':'other content'})
+
+def add_nums(request, num1, num2):
+    pass
