@@ -16,4 +16,5 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'core.views.list_strings'),
     url(r'^test$', 'core.views.list_strings'),
+    url(r'^calc/(?P<num1>\d*)/(?P<num2>\d*)/$', 'core.views.add_nums'),
 )
