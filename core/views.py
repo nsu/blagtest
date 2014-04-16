@@ -9,3 +9,5 @@ def test(request):
     testObj = StringStore()
     testObj = 'This is an object being displayed on a web page!'
     return render(request,'test.html',{'test':testObj})
+def add_nums(request, num1, num2):
+    pass

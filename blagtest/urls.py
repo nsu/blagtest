@@ -22,6 +22,5 @@ urlpatterns = patterns('',
     url(r'^polls/(?P<poll_id>\d+)/vote/$', 'polls.views.vote'),
     url(r'^polls/list$', 'polls.views.list'),
     url(r'^polls/create$', 'polls.views.create'),
-
-    
+    url(r'^calc/(?P<num1>\d*)/(?P<num2>\d*)/$', 'core.views.add_nums'),
 )
