@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     url(r'^$', 'core.views.list_strings'),
     url(r'^test$', 'core.views.list_strings'),
     url(r'^calc/(?P<num1>\d*)/(?P<num2>\d*)/$', 'core.views.add_nums'),
+    url(r'^mult/(?P<num1>\d*)/(?P<num2>\d*)/$', 'core.views.mult_nums'),
 )
