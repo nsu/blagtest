@@ -6,7 +6,10 @@ from django.template import RequestContext
 from polls.models import Choice, Poll
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404, render
+from polls.forms import *
+from django.utils import timezone
+
 
 def index(request):
     latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]
@@ -32,3 +35,18 @@ def vote(request, poll_id):
         selected_choice.votes += 1
         selected_choice.save()
         return HttpResponseRedirect(reverse('polls.views.results', args=(p.id,)))
+def createPoll(request):
+    if request.method=='POST':
+        form=PollForm(request.POST)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.pub_date=timezone.now()
+            obj.save()
+            latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]
+            return render_to_response('polls/index.html', {'latest_poll_list': latest_poll_list})
+            
+    else:
+        form=PollForm()
+    return render(request,'polls/create.html',{'form':form})
+    
+    
