@@ -1,0 +1,8 @@
+<div>DATE  - {{today}} </div>
+<div>POSTS:</div>
+<ul>
+	{% for Post in posts %}
+	<li>{{Post.title}}</li>
+	<li>{{Post.body}}</li>
+{%endfor %}
+</ul>
