@@ -14,7 +14,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'core.views.list_strings'),
     url(r'^test$', 'core.views.test'),
     url(r'^polls/$', 'polls.views.index'),
     url(r'^polls/(?P<poll_id>\d+)/$', 'polls.views.detail'),
@@ -24,5 +23,6 @@ urlpatterns = patterns('',
     url(r'^polls/create$', 'polls.views.createPoll'),
     url(r'^calc/(?P<num1>\d*)/(?P<num2>\d*)/$', 'core.views.add_nums'),
     url(r'^calculator$', 'core.views.calc'),
+    url(r'^blag/list/$', 'core.views.list_posts'),
     
 )

@@ -2,10 +2,8 @@
 from core.models import *
 from django.shortcuts import render
 from core.forms import *
+from datetime import datetime
 
-def list_strings(request):
-    all_strs = StringStore.objects.all()
-    return render(request, 'list_strings.html', {'all_strs':all_strs, 'foo':'other content'})
 def test(request):
     testObj = StringStore()
     testObj = 'This is an object being displayed on a web page!'
@@ -31,6 +29,10 @@ def calc(request):
     else:
         form=Calc()
     return render(request,'calculator.html',{'form':form})
+def list_posts(request):
+    all_posts = Post.objects.all()
+    return render(request, 'list_posts.html', {'posts':all_posts, 'today':datetime.now()})
+    
         
     
     
