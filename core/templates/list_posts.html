@@ -1,0 +1,7 @@
+<h1> List posts </h1>
+
+{{today}}
+
+{% for myPost in all_posts %}
+	<p> {{myPost.title}} {{myPost.body}} </p>
+{% endfor %}
