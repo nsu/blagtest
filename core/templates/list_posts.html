@@ -3,5 +3,7 @@
 {{today}}
 
 {% for myPost in all_posts %}
-	<p> {{myPost.title}} {{myPost.body}} </p>
+	<h3>{{myPost.title}}</h3>
+	<p>{{myPost.body}}</p>
+	-------------------
 {% endfor %}
