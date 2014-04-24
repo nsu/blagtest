@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     url(r'^calc/(?P<num1>\d*)/(?P<num2>\d*)/$', 'core.views.add_nums'),
     url(r'^mult/(?P<num1>\d*)/(?P<num2>\d*)/$', 'core.views.mult_nums'),
     url(r'^blag/list/$', 'core.views.list_posts'),
+	url(r'^blag/new/$', 'core.views.new_post'),
 )
